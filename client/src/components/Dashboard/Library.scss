@@ -1,0 +1,18 @@
+.my-playlists{
+    .playlist{
+        &-delete{
+            display: flex;
+            flex-direction: column;
+        }
+        &-cuts{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+}
+iframe{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}

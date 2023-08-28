@@ -1,0 +1,79 @@
+.login{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #3F3F3F;
+
+    &-content{
+        padding: 3vw;
+        display: flex;
+        flex-direction: column;
+        gap: 30vh;
+
+        .logo{
+            font-weight: 600;
+            font-size: 30px;
+            color: #FFF;
+        }
+
+        &__form{
+            padding-left: 72px;
+            display: flex;
+            flex-direction: column;
+
+            &-title{
+                font-weight: 600;
+                font-size: 30px;
+                color: #FFF;
+                margin-bottom: 3vw;
+            }
+
+            .inputs-form{
+                gap: 10px;
+                margin-bottom: 30px;
+
+                input{
+                    background:none;
+                    border: none;
+                    border-bottom:1px solid #B4B4B4;
+                    color: #B4B4B4;
+                    font-family: "Outfit", sans-serif;
+                    font-size: 20px;
+                    font-weight: 300;
+
+                    &:nth-child(1){
+                        margin-right: 10px;
+                    }
+                }
+
+                .user-not-found{
+                    margin-top: 10px;
+                    color: red;
+                }
+            }
+
+            &-button{
+                padding: 10px 16px;
+                align-self: flex-end;
+                background: #00CCBC;
+                border: none;
+                border-radius: 7px;
+                font-size: 16px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+    &-background{
+        width: 50vw;
+        height: 100%;
+        object-fit: cover;
+        
+
+        .login-left{
+            position: absolute;
+            left: 0;
+        }
+    }
+}

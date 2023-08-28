@@ -1,0 +1,345 @@
+.dashboard{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #3F3F3F;
+
+    &-background{
+        width: 50vw;
+        object-fit: cover;
+    }
+    .userName{
+        position: absolute;
+        top : 0;
+        left: 50%;
+        width: 1vw;
+        height: 1vw;
+        padding: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #000;
+        background: #E3ADDB;
+        border-radius: 50%;
+        border: 7px solid #343434;
+        transform: translate(-50%,50%);
+    }
+
+    &-content{
+        position: relative;
+        width: 50vw;
+        min-height: 50vh;
+        align-self: center;
+        padding: 0 6vw;
+
+        &__navigation{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+
+            .menu-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 18px;
+                color: #757575;
+                transition: all 200ms ease-in-out;
+                cursor: pointer;
+
+                &::after{
+                    content: "";
+                    width: 105%;
+                    height: 1px;
+                    background: #757575;
+                }
+
+                &:hover{
+                    color: #FFFFFF;
+                    &::after{
+                        background: #FFFFFF;
+                    }
+                }
+
+                &.active{
+                    color: #FFFFFF;
+                    &::after{
+                        background: #FFFFFF;
+                    }
+                }
+
+                &__logout{
+                    background: none;
+                    border: none;
+                    color: #C55151;
+                    &::after{
+                        background: #C55151;
+                    }
+                    &:hover{
+                        color: red;
+                        &::after{
+                            background: red;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .title{
+            font-family: "Outfit",sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            color: #B4B4B4;            
+            padding: 10px 20px;
+            border-bottom: 1px solid #B4B4B4;
+            transition: all 300ms ease-in-out;
+
+            &-active{
+                color: #fff;
+                border-bottom: 1px solid #fff;
+                background: #525252;
+            }
+        }
+
+        &__created,&__join{
+            width: 49%;
+        }
+
+        .created-list,.join-list{
+           ul{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+           }
+        }
+        .join-list{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;       
+        }
+        
+        .list-title{
+            font-family: "Outfit",sans-serif;
+            font-weight: 600;
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .card-room{
+            padding: 4px 14px 4px 4px;
+            background: #364ED0;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            
+            &-no-underline{
+                text-decoration: none;
+                color: #fff;
+                width: 90%;
+            }
+
+            &__info{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+
+                &-img{
+                    width: 42px;
+                    height: 42px;
+                    background: #BE53E3;
+                    border-radius: 5px;
+                    border: none;
+                    object-fit: cover;
+                }
+            }
+
+            &__users{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 5px;
+                z-index: 99999;
+
+                .button-delete{
+                    border: none;
+                    background: none;
+                    color: red;
+                    cursor: pointer;
+                    font-size: 20px;
+                }
+
+                &::before{
+                    content: "";
+                    width: 9px;
+                    height:11px;
+                    background: url("../../../public/users-icon.svg");
+                    background-size: cover;
+                }
+            }
+
+            &__add{
+                height: 42px;
+                margin-top: 10px;
+                background: none;
+                border: 2px dashed #00CCBC;
+                position: relative;
+
+                &-input{
+                    width: 100%;
+                    z-index: 999;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    input{
+                        border: none;
+                        background: none;
+                        border-bottom: 1px solid #00CCBC;
+                        color: #fff;
+                        font-size: 16px;
+                        width: 70%;
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                    button{
+                        border: none;
+                        background: none;
+                        color: #00CCBC;
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+                }
+
+                &-button{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    border: none;
+                    font-size: 29px;
+                    font-weight: 600;
+                    color: #00CCBC;
+                    background: none;
+                    transform: translate(-50%,-50%);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &-sub{
+        animation-name: appear;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        @keyframes appear{from{opacity:0} to{opacity:1}}
+
+        &__rooms{
+            display: flex;
+            flex-direction: column;
+            gap: 4vw;
+        }
+
+        &__library{
+            &-header{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+
+                h1{
+                    font-weight: 600;
+                    font-size: 30px;
+                    color: #fff;
+                }
+
+                .create{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    gap: 10px;
+    
+                    &-button{
+                        padding: 12.5px 18px;
+                        color: #00CCBC;
+                        border: 2px dashed #00CCBC;
+                        border-radius: 6px;
+                    }
+                }
+            }
+           .my-playlists{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+            .playlist{
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+
+                &-infos{
+                    padding: 20px 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    background-color: #00CCBC;
+                    border-radius: 10px;
+
+                    &__name{
+                        font-family: "Outfit",sans-serif;
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: #fff;
+                    }
+                }
+
+                &-delete{
+                    button{
+                        padding: 10px;
+                        border: 1px solid var(--color-state-error);
+                        border-radius: 5px;
+                        background: none;
+                        color: var(--color-state-error);
+                        font-size: 15px;
+                        cursor: pointer;
+                        transition: all 200ms ease-in-out;
+
+                        &:hover{
+                            background: var(--color-state-error);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+           }
+           
+           .embed-youtube{
+            pointer-events: none;
+           }
+        }
+    }
+
+}
